@@ -250,7 +250,7 @@
   }
   @media (max-width: 860px) { .problem-grid { grid-template-columns: 1fr; } }
 
-  /* ---------- SHOWCASE (phone) ---------- */
+  /* ---------- SHOWCASE (phone com Efeito Vidro) ---------- */
   .showcase {
     background: linear-gradient(180deg, var(--bg) 0%, #070a10 100%);
     border-top: 1px solid var(--line);
@@ -271,36 +271,34 @@
   .phone-glow {
     position: absolute;
     width: 340px; height: 340px;
-    background: radial-gradient(circle, rgba(207,232,255,0.16), transparent 70%);
+    background: radial-gradient(circle, rgba(207,232,255,0.25), transparent 70%);
     filter: blur(10px);
   }
   .phone {
     position: relative;
     width: 260px;
     height: 540px;
-    background: #0c1017;
-    border: 1px solid rgba(235,240,248,0.14);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 30px;
     padding: 14px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.02) inset;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
   .phone-screen {
     height: 100%;
-    background: linear-gradient(180deg, #0a0d13, #070a0f 70%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     padding: 26px 18px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   .p-top { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--ink-faint); margin-bottom: 30px; }
-  .p-label { font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.03em; }
-  .p-streak {
-    text-align: center;
-    margin: 6px 0 26px;
-  }
-  .p-streak b { font-family: 'Newsreader', serif; font-size: 3.4rem; color: var(--ink); display: block; line-height: 1; }
-  .p-streak span { font-size: 0.72rem; color: var(--ink-faint); }
   .p-ring {
     width: 150px; height: 150px;
     margin: 0 auto 24px;
@@ -314,27 +312,47 @@
     position: absolute;
     width: 122px; height: 122px;
     border-radius: 50%;
-    background: #0a0d13;
+    background: rgba(10, 13, 19, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .p-ring-inner { position: relative; z-index: 1; text-align: center; }
   .p-ring-inner b { font-family: 'Newsreader', serif; font-size: 1.9rem; color: var(--ink); display: block; }
   .p-ring-inner span { font-size: 0.6rem; color: var(--ink-faint); }
+  
+  /* Efeito Vidro aplicado às linhas internas do app */
   .p-row {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 0;
-    border-top: 1px solid rgba(235,240,248,0.08);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
     font-size: 0.72rem;
     color: var(--ink-dim);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .p-row b { color: var(--ink); font-weight: 600; }
+  
+  /* Efeito Vidro aplicado ao Botão SOS */
   .p-sos {
     margin-top: auto;
-    border: 1px solid rgba(255,138,92,0.4);
+    background: rgba(255, 138, 92, 0.12);
+    border: 1px solid rgba(255, 138, 92, 0.4);
+    border-radius: 16px;
     color: var(--ember);
     text-align: center;
     font-size: 0.72rem;
+    font-weight: 600;
     letter-spacing: 0.04em;
-    padding: 11px 0;
+    padding: 12px 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.2s;
+  }
+  .p-sos:hover {
+    background: rgba(255, 138, 92, 0.22);
   }
   @media (max-width: 860px) { .showcase-grid { grid-template-columns: 1fr; } .phone-stage { order: -1; } .kpis { gap: 28px; flex-wrap: wrap; } }
 
